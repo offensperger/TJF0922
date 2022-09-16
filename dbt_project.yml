@@ -38,3 +38,5 @@ models:
         +schema: "{{ 'stg_pen' if 'dev' not in target.name else None }}"
         A1_STAGE:
           +materialized: view
+        A2_PSA:
+          +materialized: incremental
