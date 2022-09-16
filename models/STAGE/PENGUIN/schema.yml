@@ -1,0 +1,25 @@
+version: 2
+
+# Man sieht hier gut wie wertvoll es ist, eine einheitliche Logik bei der Keybennenung zu haben
+
+models:
+  - name: A1_1_UPDATE_PENGUINS
+    description: Staged penguin data from our penguin seed csv.
+    columns:
+      - name: business_key
+        description: Created business key by use of self-written macro create_key.
+        tests:
+          - unique
+          - not_null
+      - name: species
+        tests:
+          - accepted_values:
+              values: ['Adelie', 'Gentoo', 'Chinstrap']
+  - name: A1_2_INSERT_PENGUINS
+    description: Staged penguin data from our penguin seed csv.
+    columns:
+      - name: business_key
+        description: Created business key by use of self-written macro create_key.
+        tests:
+          - unique
+          - not_null

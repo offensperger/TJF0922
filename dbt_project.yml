@@ -33,3 +33,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_workshop:
+    STAGE:
+      PENGUIN:
+        +schema: "{{ 'stg_pen' if 'dev' not in target.name else None }}"
+        A1_STAGE:
+          +materialized: view
