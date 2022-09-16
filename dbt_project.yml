@@ -43,3 +43,10 @@ models:
       A3_HR:
         +schema: "{{ 'stg_hr' if 'dev' not in target.name else None }}"
         +materialized: view
+    CORE:
+      DIMS:
+        +schema: "{{ 'core_dim' if 'dev' not in target.name else None }}"
+        +materialized: table 
+      FACTS:
+        +schema: "{{ 'core_fct' if 'dev' not in target.name else None }}"
+        +materialized: table  
