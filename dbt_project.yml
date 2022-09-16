@@ -40,3 +40,6 @@ models:
           +materialized: view
         A2_PSA:
           +materialized: incremental
+      A3_HR:
+        +schema: "{{ 'stg_hr' if 'dev' not in target.name else None }}"
+        +materialized: view
