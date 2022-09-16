@@ -12,6 +12,7 @@ models:
           - unique
           - not_null
       - name: species
+        description: "{{ doc('seed_overview') }}"
         tests:
           - accepted_values:
               values: ['Adelie', 'Gentoo', 'Chinstrap']
